@@ -1,0 +1,24 @@
+/// Calcular el cuadrado de un numero
+#include <stdio.h>
+
+int main() {
+	int temp, num;
+	int cuadrado = 0;
+	int cuenta = 0;
+    printf("Ingresa el numero: \n");
+    scanf("%d", &num);   
+	temp = num;                                                                
+	while(temp > 0)                                                            
+	{
+	    if(temp & 1)                                                          
+	    {                                                                      
+	        cuadrado += num << cuenta;
+	       
+	    }
+	    temp = temp >> 1;                                                    //Corrimiento de 1 bit a la derecha a temp de modo que se divide entre 2 y se actualiza su valor
+	                    
+	    cuenta++;                                                            //El valor de cuenta se incrementa en 1, esto nos servirá en la siguiente iteración para añadir a el doble de veces el valor de "num" a "cuadrado" 
+                                                                          // y esto se repetirá hasta que temp se vuelva 0
+	}                                                                   
+	printf("El cuadrado de %d es: %d\n", num, cuadrado );
+}
